@@ -1,0 +1,14 @@
+% Define some facts and rules
+
+% Fact: People who have a fever and a cough might have the flu.
+has_symptom(john, fever).
+has_symptom(john, cough).
+
+% Fact: People with the flu should see a doctor.
+should_see_doctor(X) :- has_symptom(X, fever), has_symptom(X, cough).
+
+% Goal: Determine if John should see a doctor.
+goal :- should_see_doctor(john).
+
+% Query: Ask Prolog to prove the goal.
+?- goal.
